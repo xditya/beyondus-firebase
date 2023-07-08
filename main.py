@@ -19,4 +19,4 @@ db = firestore.client()
 hospitals_ref = db.collection('hospital_data')
 
 for hospital in readcsv():
-    hospitals_ref.add(hospital)
+    hospitals_ref.document(hospital["name"]).set(hospital)
